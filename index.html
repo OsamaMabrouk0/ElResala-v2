@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تطبيق الصلاة</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- ----------------------------|الهيدر|---------------------------- -->
+  <header>
+    <i class="fa-solid fa-bars-staggered" id="bars"></i>
+    <div class="title">الرئيسية</div>
+    <div class="moon-icon" onclick="toggleDarkMode()">
+      <i id="darkModeIcon" class="fa-solid fa-moon"></i>
+    </div>
+    
+
+  </header>
+  <!-- ----------------------------|القائمة الجانبية|---------------------------- -->
+
+  <div class="menu">
+    <i class="fa-solid fa-xmark" id="close"></i>
+
+</div>
+  <!-- ----------------------------|البانر|---------------------------- -->
+
+  <div class="banner">
+    <h2>الثلاثاء</h2>
+    <div class="time">8:04 م</div>
+    <div class="details">
+      <div>
+        <p>آخر قراءة</p>
+        <p>لا يوجد</p>
+      </div>
+      <div>
+        <p>26 نوفمبر 2024</p>
+        <p>24 جمادى الأول 1446 هـ</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ----------------------------|اوقات الصلاة|---------------------------- -->
+
+  <div class="prayer-times">
+    <div class="prayer-box"><span class="pray-span">الفجر</span><br><br>5:04<br><span class="pray-span-t">ص</span></div>
+    <div class="prayer-box"><span class="pray-span">الظهر</span><br><br>12:48<br><span class="pray-span-t">م</span></div>
+    <div class="prayer-box"><span class="pray-span">العصر</span><br><br>3:38<br><span class="pray-span-t">م</span></div>
+    <div class="prayer-box"><span class="pray-span">المغرب</span><br><br>5:08<br><span class="pray-span-t">م</span></div>
+    <div class="prayer-box"><span class="pray-span">العشاء</span><br><br>6:20<br><span class="pray-span-t">م</span></div>
+  </div>
+
+  <!-- ----------------------------|الاقسام الرئيسية|---------------------------- -->
+  <div class="main-sections">
+    <h3>الأقسام الرئيسية</h3>
+    <div class="section-grid">
+      <div class="quran-box section-box">
+        <img src="assets/images/koran.png" alt="القرآن الكريم">
+        القرآن الكريم
+      </div>
+      <div class="section-box">
+        <img src="assets/images/religion.png" alt="أذكار">
+        أذكار
+      </div>
+      <div class="section-box">
+        <img src="assets/images/tauhid.png" alt="اسماء الله الحسنى">
+        اسماء الله الحسنى
+      </div>
+      <div class="section-box">
+        <img src="assets/images/tasbih.png" alt="تسبيح">
+        تسبيح
+      </div>
+      <div class="section-box">
+        <img src="assets/images/praying.png" alt="أدعية">
+        أدعية
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

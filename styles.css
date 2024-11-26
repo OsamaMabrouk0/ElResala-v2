@@ -1,0 +1,266 @@
+/* *****************************************|الاساسيات|***************************************** */
+:root {
+  --main-bg: #f9f9f9;
+  --main-color: #333;
+  --secondary-bg: #ffffff;
+  --highlight-color: #6c0ba9;
+  --secondary-highlight: #d67bdb;
+  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --banner-bg-gradient: linear-gradient(135deg, #6c0ba9, #d67bdb);
+}
+
+
+body.dark-mode {
+  --main-bg: #1c1c1c;
+  --main-color: #f0f0f0;
+  --secondary-bg: #2c2c2c;
+  --highlight-color: #e09eff;
+  --secondary-highlight: #b76edb;
+  --box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+  --banner-bg-gradient: linear-gradient(135deg, #000, #444);
+}
+
+/* إعداد الخطوط والألوان */
+body {
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--main-bg);
+  color: var(--main-color);
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+/* *****************************************|الهيدر|***************************************** */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: var(--main-bg); 
+  box-shadow: none; /* بدون ظل */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* النمط عند التفعيل */
+header.active-header {
+  background: var(--secondary-bg);
+  box-shadow: var(--box-shadow);
+}
+
+
+header .menu-icon,
+header .moon-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--highlight-color);
+}
+
+header .title {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--highlight-color);
+}
+
+.moon-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--icon-color, #333);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#darkModeIcon {
+  transition: transform 0.3s ease;
+}
+
+
+body.dark-mode #darkModeIcon {
+  transform: rotate(180deg); 
+}
+
+.fa-bars-staggered{
+  font-size: 24px;
+  color: var(--highlight-color);
+}
+
+
+/* *****************************************|القائمة الجانبية|***************************************** */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--secondary-bg);
+  box-shadow: var(--box-shadow);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+
+#close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  color: var(--highlight-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+#close:hover {
+  background: var(--highlight-color);
+  color: var(--secondary-bg);
+}
+
+
+
+/* *****************************************|البانر|***************************************** */
+
+.banner {
+  background: var(--banner-bg-gradient), url('assets/images/baner\ bg.png') center/cover no-repeat;
+  background-blend-mode: overlay;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 15px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  filter: blur(8px);
+  z-index: -1;
+  border-radius: 15px;
+}
+
+
+.banner h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.banner .time {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.banner .details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.banner .details div {
+  flex: 1;
+  text-align: center;
+}
+
+/* *****************************************|اوقات الصلاة|***************************************** */
+
+.prayer-times {
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
+  margin: 10px;
+}
+
+.prayer-box {
+  background: var(--secondary-bg);
+  padding: 8px;
+  flex: 1;
+  max-width: 60px;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--highlight-color);
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.pray-span{
+  color: var(--main-color);
+}
+
+.pray-span-t{
+  color: var(--main-color);
+
+}
+/* *****************************************|الاقسام الرئيسية|***************************************** */
+
+.main-sections {
+  margin: 20px 10px;
+}
+
+.main-sections h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--highlight-color);
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.section-box {
+  background: var(--secondary-bg);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--highlight-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.quran-box {
+  grid-column: span 2;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.section-box i {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: var(--secondary-highlight);
+}
+
+.section-box img {
+  width: 40px; /* تعديل الحجم حسب الحاجة */
+  height: auto;
+  margin: auto;
+}
+
+.prayer-box:hover,
+.section-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
